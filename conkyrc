@@ -1,10 +1,4 @@
-
-# set to yes if you want Conky to be forked in the background
-background no
-
-# X font when Xft is disabled, you can pick one with program xfontsel
-
-# Use Xft?
+#Use Xft?
 use_xft yes
 
 # Xft font when Xft is enabled
@@ -118,10 +112,12 @@ ${color}CPU Usage:${color magenta2} $cpu% ${cpubar 11,0}
 
 ${color}RAM Usage:${color green} $mem ($memperc%) ${membar 11,0}
 ${color}Available RAM:${color green} $memmax
-${if_match "$battery" != ""} 
-${color}ACPI Battery: ${color DeepSkyBlue}$battery_short ${battery_bar 11,0} 
-${color}Remaining time: ${color DeepSkyBlue}$battery_time
-$endif
+
+#${if_match "$battery" != ""} 
+#${color}ACPI Battery: ${color DeepSkyBlue}$battery_short ${battery_bar 11,0} 
+#${color}Remaining time: ${color DeepSkyBlue}$battery_time
+#$endif
+
 $color$stippled_hr
 $alignc${color}Processes:$color $processes  ${color grey}Running:$color $running_processes
 $alignc${color}(top 5 sorted by CPU usage)
@@ -147,4 +143,3 @@ ${upspeedgraph enp41s0 25,285 4B1B0C FF0000 100 -l}
 Down Speed: ${downspeed enp41s0}${goto 180} Total Down: ${totaldown enp41s0}
 ${downspeedgraph enp41s0 25,285 324D23 00FF00 100 -l}
 IP: $alignc${addr enp41s0}
-
